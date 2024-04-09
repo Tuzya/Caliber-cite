@@ -1,0 +1,2 @@
+
+export * from './ListOperatives.component';

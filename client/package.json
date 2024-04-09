@@ -1,0 +1,37 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.2.3",
+    "@vanilla-extract/recipes": "^0.5.2",
+    "async-mutex": "^0.5.0",
+    "axios": "^1.6.8",
+    "frame": "^1.0.0-alpha.2",
+    "framer-motion": "^11.0.24",
+    "motion": "^10.17.0",
+    "next": "14.1.4",
+    "next-redux-wrapper": "^8.1.0",
+    "prettier": "^3.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-redux": "^9.1.0",
+    "redux": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@vanilla-extract/next-plugin": "^2.4.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.4",
+    "eslint-config-prettier": "^9.1.0",
+    "typescript": "^5"
+  }
+}
