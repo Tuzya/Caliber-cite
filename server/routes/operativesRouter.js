@@ -7,7 +7,7 @@ router.route('/nickname/assault').get(async (req, res) => {
   try {
     const operatives = await Operatives.findAll({
 
-      attributes: ['nickname', 'id', 'class_id'],
+      attributes: ['nickname', 'id', 'class_id', 'img'],
     });
     return res.json(operatives);
   } catch (err) {

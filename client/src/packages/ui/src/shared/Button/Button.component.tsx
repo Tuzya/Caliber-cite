@@ -1,30 +1,60 @@
 import Link from 'next/link';
-import React, { ButtonHTMLAttributes, DetailedHTMLProps, PropsWithChildren } from 'react';
+import React, { FC, MouseEvent, ReactNode } from 'react';
 
-interface IDetailedButtonProps
-	  extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>,HTMLButtonElement> {
-    
-  }
-  interface IButtonProps extends PropsWithChildren<IDetailedButtonProps> {
-    url?: string
-  }
+import { ButtonClasses, buttonClasses } from './Button.css';
 
-const Button: React.FC<IButtonProps> = ({ url, children, ...props }) => {
-  return (
-    <>
-      {url && (
-        <Link href={url}>{children}</Link>
-      ) }
-      {!url && (
-        <button {...props}> {children} </button>
-      )}
-    </>
-  );
+export type TButtonProps = {
+	href?: string;
+	label: string;
+	variant?: string;
+	sizes?: string;
+	wrap?: boolean;
+	fill?: boolean;
+
+	onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 };
 
-export default Button;
+//TODO add onClick action. polimorph type for link and button
 
+const Button: FC<
+	TButtonProps & ButtonClasses['recipe']
+> = ({
+	href = null,
+	label,
+	variant,
+	sizes,
+	onClick,
+	wrap = true,
+	fill = false,
+}) => {
+	if (href) {
+		return (
+			<Link
+				className={buttonClasses.recipe({
+					variant,
+					sizes,
+					wrap,
+					fill,
+				})}
+				href={href}
+			>
+				{label}
+			</Link>
+		);
+	}
+	return (
+		<button
+			className={buttonClasses.recipe({
+				variant,
+				sizes,
+				wrap,
+				fill,
+			})}
+			onClick={onClick}
+		>
+			{label}
+		</button>
+	);
+};
 
-
-
-
+export { Button };

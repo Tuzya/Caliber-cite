@@ -1,4 +1,4 @@
-const baseUrl = `http://localhost:3002/api`
+const baseUrl = `http://localhost:3040/api`
 
 // const serverResponseCodes = Object.freeze({
 //     ok: 200,

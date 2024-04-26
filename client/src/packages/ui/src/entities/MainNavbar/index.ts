@@ -1,1 +1,1 @@
-export * from './MainNavbar.component'
+export * from './MainNavbar.component';

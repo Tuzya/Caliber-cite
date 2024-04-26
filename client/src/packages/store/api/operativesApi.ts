@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 const defaultUrl = '/operatives/nickname/assault'
 export const operativesApi = createApi({
   reducerPath: 'operativesApi',
-  baseQuery: fetchBaseQuery({baseUrl: `http://localhost:3002/api`}),
+  baseQuery: fetchBaseQuery({baseUrl: `http://localhost:3040/api`}),
   tagTypes: ['Public'],
   endpoints: builder => ({
     getOperatives: builder.query({
